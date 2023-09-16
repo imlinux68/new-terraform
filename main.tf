@@ -30,3 +30,8 @@ resource "aws_vpc" "my_vpc" {
     "Name" = "My VPC"
   }
 }
+
+resource "aws_instance" "server" {
+    ami = "ami-0be50262c078dfea9"
+    instance_type = "t2.micro"
+}
