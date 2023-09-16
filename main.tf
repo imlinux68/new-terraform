@@ -51,7 +51,7 @@ resource "aws_subnet" "web" {
 resource "aws_internet_gateway" "my_igw" {
   vpc_id = aws_vpc.main_vpc.id
   tags = {
-    "Name" = "${var.main_vpc_name} IGW"
+    "Name" = "Main vpc IGW"
   }
 }
 
@@ -61,5 +61,9 @@ resource "aws_default_route_table" "main_vpc_default_rt" {
 
   route {
     cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.my_igw.id
+  }
+  tags = {
+    "Name" = "My default route table"
   }
 }
