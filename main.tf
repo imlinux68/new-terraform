@@ -21,3 +21,12 @@ resource "aws_vpc" "main_vpc" {
     "Name" = "Main VPC"
   }
 }
+
+# Create a second VPC to destroy 
+# terraform destroy -target aws_vpc.my_vpc --auto-approve
+resource "aws_vpc" "my_vpc" {
+  cidr_block = "192.168.0.0/16"
+  tags = {
+    "Name" = "My VPC"
+  }
+}
