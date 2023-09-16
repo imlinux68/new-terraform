@@ -31,6 +31,8 @@ resource "aws_vpc" "my_vpc" {
   }
 }
 
+# Replace this instance with another
+# terraform apply -replace="aws_instance.server"
 resource "aws_instance" "server" {
     ami = "ami-0be50262c078dfea9"
     instance_type = "t2.micro"
