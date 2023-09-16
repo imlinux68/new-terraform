@@ -69,7 +69,7 @@ resource "aws_default_route_table" "main_vpc_default_rt" {
 }
 
 resource "aws_default_security_group" "default_sec_group" {
-  vpc_id = aws_vpc.main_vpc
+  vpc_id = aws_vpc.main_vpc.id
     ingress = [
     {
       description      = "HTTP"
