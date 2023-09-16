@@ -11,7 +11,7 @@ terraform {
 
 # Configure the AWS Provider from off docs
 provider "aws" {
-  region = "us-west-1"
+  region = "us-west-2"
 }
 
 # Create a VPC
